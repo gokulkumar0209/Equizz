@@ -4,10 +4,10 @@ function Template({ question, answers }) {
 	console.log(question);
 	return (
 		<div>
-			<div className="text-xl placeholder:font-bold">
+			<div className="text-xl placeholder:font-bold ml-8 mb-2">
 				<h1>{question}</h1>
 			</div>
-			<div className="bg-gray-500">
+			<div className=" ml-20 mx-20">
 				{answers.map((ans) => {
 					return (
 						<div>
