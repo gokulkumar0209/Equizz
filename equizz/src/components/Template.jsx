@@ -14,7 +14,7 @@ function Template({ question, answers, actual, setActual }) {
 			<div className="text-xl placeholder:font-bold ml-8 mb-2">
 				<h1>{question}</h1>
 			</div>
-			<div className=" ml-20 mx-20">
+			<div className=" ml-20 mx-20 grid grid-rows-4">
 				<label>
 					<input
 						type="radio"
