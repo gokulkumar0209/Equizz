@@ -13,9 +13,17 @@ function Home() {
 				</div>
 				<div className="">
 					{cont.map((q) => {
-						return <Template question={q.question} answers={q.ans} actual={actual} setActual={setActual}/>;
+						return (
+							<Template
+								question={q.question}
+								answers={q.ans}
+								actual={actual}
+								setActual={setActual}
+							/>
+						);
 					})}
 				</div>
+				<div><Result/></div>
 			</form>
 		</div>
 	);
