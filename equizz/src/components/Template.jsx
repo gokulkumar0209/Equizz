@@ -1,6 +1,5 @@
 import React from "react";
 
-
 function Template({ question, answers, actual, setActual }) {
 	const addAns = (index) => {
 		const old = actual;
@@ -18,7 +17,7 @@ function Template({ question, answers, actual, setActual }) {
 				<label>
 					<input
 						type="radio"
-						name="answers"
+						name={question}
 						value={answers[0]}
 						onChange={() => addAns(0)}
 					></input>
@@ -27,7 +26,7 @@ function Template({ question, answers, actual, setActual }) {
 				<label>
 					<input
 						type="radio"
-						name="answers"
+						name={question}
 						value={answers[1]}
 						onChange={() => addAns(1)}
 					></input>
@@ -36,17 +35,16 @@ function Template({ question, answers, actual, setActual }) {
 				<label>
 					<input
 						type="radio"
-						name="answers"
+						name={question}
 						value={answers[2]}
 						onChange={() => addAns(2)}
-						
 					></input>
 					{answers[2]}
 				</label>
 				<label>
 					<input
 						type="radio"
-						name="answers"
+						name={question}
 						value={answers[3]}
 						onChange={() => addAns(3)}
 						checked={actual.get(question) === answers[3]}
