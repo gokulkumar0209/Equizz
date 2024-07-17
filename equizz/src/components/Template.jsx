@@ -16,6 +16,7 @@ function Template({ question, answers, actual, setActual }) {
 			<div className=" ml-20 mx-20 grid grid-rows-4">
 				<label>
 					<input
+						required
 						type="radio"
 						name={question}
 						value={answers[0]}

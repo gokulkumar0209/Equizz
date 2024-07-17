@@ -4,4 +4,10 @@ const cont = [
 	{ question: "Laptop", ans: ["HP", "Dell", "Asus", "Acer"] },
 	{ question: "Watch", ans: ["Apple", "Samsung", "Timex", "Titan"] },
 ];
-export default cont;
+const expected = {
+	Phone: "Samsung",
+	TV: "Samsung",
+	Laptop: "HP",
+	Watch: "Timex",
+};
+export default {cont, expected};

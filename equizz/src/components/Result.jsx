@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-function Result() {
-  return (
-    <div>Result</div>
-  )
+function Result({ count, available }) {
+	return (
+		<div>
+			You have answered {count}/{available} questions correctly
+		</div>
+	);
 }
 
-export default Result
+export default Result;
