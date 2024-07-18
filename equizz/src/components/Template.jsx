@@ -12,7 +12,7 @@ function Template({
 		const old = actual;
 		old.set(question, answers[index]);
 		setActual(old);
-		setAllSelectedDependency( allSelectedDependency+1);
+		setAllSelectedDependency(!allSelectedDependency);
 		// console.log(actual);
 	};
 	// console.log(actual);
