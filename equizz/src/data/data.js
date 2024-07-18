@@ -10,4 +10,4 @@ const expected = {
 	Laptop: "HP",
 	Watch: "Timex",
 };
-export default {cont, expected};
+export default { cont, expected };
