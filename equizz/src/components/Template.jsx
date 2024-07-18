@@ -24,7 +24,7 @@ function Template({
 			<div className=" ml-20 mx-20 grid grid-rows-4">
 				<label>
 					<input
-						required
+						checked={actual.get(question) == answers[0]}
 						type="radio"
 						name={question}
 						value={answers[0]}
@@ -36,6 +36,7 @@ function Template({
 				</label>
 				<label>
 					<input
+						checked={actual.get(question) == answers[1]}
 						type="radio"
 						name={question}
 						value={answers[1]}
@@ -47,6 +48,7 @@ function Template({
 				</label>
 				<label>
 					<input
+						checked={actual.get(question) == answers[2]}
 						type="radio"
 						name={question}
 						value={answers[2]}
@@ -58,13 +60,13 @@ function Template({
 				</label>
 				<label>
 					<input
+						checked={actual.get(question) == answers[3]}
 						type="radio"
 						name={question}
 						value={answers[3]}
 						onChange={() => {
 							addAns(3);
 						}}
-						checked={actual.get(question) === answers[3]}
 					></input>
 					{answers[3]}
 				</label>

@@ -11,6 +11,11 @@ function Home() {
 	const [allSelected, setAllselected] = useState(false);
 	const [count, setCount] = useState(0);
 	const [allSelectedDependency, setAllSelectedDependency] = useState(false);
+	const reset = (e) => {
+		e.preventDefault();
+		setActual(map);
+		setAllSelectedDependency(!allSelectedDependency);
+	};
 	const res = (e) => {
 		e.preventDefault();
 		let new_count = 0;
@@ -36,9 +41,11 @@ function Home() {
 		// console.log("Hi");
 		if (actual.size == cont.length) {
 			setAllselected(true);
+		}else{
+			setAllselected(false)
 		}
 	}, [allSelectedDependency]);
-	return (
+	return (	
 		<div className=" bg-blue-200">
 			<div className={resVisible ? "hidden" : "flex justify-end mr-10 "}>
 				<button
@@ -47,11 +54,19 @@ function Home() {
 					disabled={!allSelected}
 					className={
 						allSelected == false
-							? " bg-gray-400 p-1 px-3 border border-gray-800 mt-2"
-							: "bg-blue-400 p-1 px-3 border border-blue-800 mt-2"
+							? " bg-gray-400 p-1 px-3 border border-gray-800 mt-2 mr-2"
+							: "bg-blue-400 p-1 px-3 border border-blue-800 mt-2 mr-2"
 					}
 				>
 					Submit
+				</button>
+				<button
+					onClick={(e) => {
+						reset(e);
+					}}
+					className=" bg-blue-400 p-1 px-3 border border-blue-800 mt-2"
+				>
+					Reset
 				</button>
 			</div>
 			<div className={resVisible == false ? "bg-blue-200" : " hidden"}>
@@ -75,13 +90,22 @@ function Home() {
 			</div>
 			<div className={resVisible == true ? "bg-blue-200" : " hidden"}>
 				<div className="flex justify-end mr-10">
-					<button onClick={res} className=" bg-blue-400 p-1 px-3 border border-blue-800 mt-2 mr-4">
+					<button
+						onClick={res}
+						className=" bg-blue-400 p-1 px-3 border border-blue-800 mt-2 mr-4"
+					>
 						Back
 					</button>
-					<button onClick={res} className=" bg-blue-400 p-1 px-3 border border-blue-800 mt-2">
+					<button
+						onClick={(e) => {
+							reset(e),
+								res(e),
+								setAllSelectedDependency(!allSelectedDependency);
+						}}
+						className=" bg-blue-400 p-1 px-3 border border-blue-800 mt-2"
+					>
 						Reset
 					</button>
-					
 				</div>
 				<Result count={count} available={actual.size} />
 			</div>

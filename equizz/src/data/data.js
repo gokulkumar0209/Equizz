@@ -11,3 +11,4 @@ const expected = {
 	Watch: "Timex",
 };
 export default { cont, expected };
+
